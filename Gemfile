@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem 'omniauth'
 gem "omniauth-rails_csrf_protection"
+gem 'rspotify'
 gem 'omniauth-spotify'
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
