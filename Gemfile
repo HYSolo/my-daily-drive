@@ -29,6 +29,7 @@ gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
+gem 'simple_form'
 gem 'omniauth'
 gem "omniauth-rails_csrf_protection"
 gem 'rspotify'
