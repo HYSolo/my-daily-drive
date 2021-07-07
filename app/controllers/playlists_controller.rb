@@ -11,13 +11,18 @@ class PlaylistsController < ApplicationController
   def create
     playlist = Playlist.new(playlist_params)
     playlist.user = current_user
-    spotify_user = RSpotify::User.find(current_user.username)
-    spotify_user.create_playlist!(playlist.name)
+    hash = JSON.parse(current_user.rspotify_hash)
+    spotify_user = RSpotify::User.new(hash)
     if playlist.save
-      redirect_to playlists_path
+      spotify_user.create_playlist!(playlist.name)
+      redirect_to playlist_path(playlist)
     else
       render :new
     end
+  end
+
+  def show
+    @playlist = Playlist.find(params[:id])
   end
 
   private
